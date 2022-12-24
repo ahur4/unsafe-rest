@@ -7,6 +7,7 @@ from routers.encryption_router import app as encryption
 from routers.exifdata_router import app as exif
 from routers.proxy_router import app as proxy
 from routers.wp_router import app as wp
+from routers.seeker_router import app as seeker
 
 # FastApi Instance
 app = FastAPI()
@@ -36,6 +37,7 @@ app.include_router(encryption)
 app.include_router(exif)
 app.include_router(proxy)
 app.include_router(wp)
+app.include_router(seeker)
 
 
 # this handler return all errors and they type's
