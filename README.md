@@ -2,6 +2,7 @@
 
 - Unsafe Penetration Testing Module Web Service.
 - All Features of The Unsafe Module Have Been Fully Implemented on This Project. And Those Who Need The Web Service of This Module Can Use This Project.
+[Telegram Channel](https://t.me/ExploitPriv8)
 
 # Usage :
 
