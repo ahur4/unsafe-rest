@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Form, UploadFile
 from fastapi.responses import JSONResponse
-from .datatypes import HashMethods
+from .DataTypes.datatypes import HashMethods
 from typing import Optional
 from unsafe import Unsafe
 import os

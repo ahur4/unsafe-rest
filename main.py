@@ -38,7 +38,6 @@ app.include_router(proxy)
 app.include_router(wp)
 
 
-
 # this handler return all errors and they type's
 @app.exception_handler(Exception)
 async def handle_exception(request, exc: Exception):
