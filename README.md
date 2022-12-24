@@ -2,7 +2,7 @@
 
 - Unsafe Penetration Testing Module Web Service.
 - All Features of The Unsafe Module Have Been Fully Implemented on This Project. And Those Who Need The Web Service of This Module Can Use This Project.
-[Telegram Channel](https://t.me/ExploitPriv8)
+ - 𝗘 𝗫 𝗣 𝗟 𝗢 𝗜 𝗧 : [Telegram Channel](https://t.me/ExploitPriv8)
 
 # Usage :
 
@@ -20,4 +20,4 @@ uvicorn main:app
 
 ![Ahur4](https://github.com/ahur4/unsafe-rest/blob/main/images/swagger.png)
 
-for See Full Routers Run The Source and See it.
+- [x] for See Full Routers Run The Source and See it.
