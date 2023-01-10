@@ -66,3 +66,16 @@ async def filemanager_finder_router(domain: str = Form(...), workers: int = Form
 async def cloudflare_bypasser_router(domain: str = Form(...), workers: int = Form(5)):
     host_ips = unsafe.cloudflare_bypasser(domain=domain, workers=workers)
     return {"status": "success", "data": {"proxy_status": host_ips}}
+
+
+@app.post('/subdomain-scanner', tags=["Brute Force"], response_class=JSONResponse)
+async def subdomain_scanner_router(domain: str = Form(...), workers: int = Form(3), subdomains: list = Form([]), timeout: int = Form(10), proxy: Optional[str] = Form("")):
+    if proxy and subdomains != ['']:
+        result = unsafe.subdomain_scanner(domain, workers, subdomains, timeout, proxy)
+    elif proxy and subdomains == ['']:
+        result = unsafe.subdomain_scanner(domain=domain, workers=workers, timeout=timeout, proxy=proxy)
+    elif not proxy and subdomains != ['']:
+        result = unsafe.subdomain_scanner(domain=domain, workers=workers, subdomains=subdomains, timeout=timeout)
+    elif not proxy and subdomains == ['']:
+        result = unsafe.subdomain_scanner(domain=domain, workers=workers, timeout=timeout)
+    return {"status": "success", "data": {"subdomains": result}}

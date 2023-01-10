@@ -4,14 +4,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers.bruteforce_router import app as bruteforce
 from routers.encryption_router import app as encryption
-from routers.exifdata_router import app as exif
+from routers.forensic_router import app as forensic
 from routers.proxy_router import app as proxy
 from routers.wp_router import app as wp
-from routers.seeker_router import app as seeker
+from routers.crawler_router import app as crawler
+from routers.network_router import app as network
 
 # FastApi Instance
 app = FastAPI()
-
 
 # CorsMiddleware Handling
 app.add_middleware(
@@ -30,14 +30,16 @@ async def swagger():
 
 @app.get('/version', tags=["System"], response_class=JSONResponse)
 async def version():
-    return {"version": "1.2.2"}
+    return {"version": "1.2.6"}
+
 
 app.include_router(bruteforce)
 app.include_router(encryption)
-app.include_router(exif)
+app.include_router(forensic)
 app.include_router(proxy)
 app.include_router(wp)
-app.include_router(seeker)
+app.include_router(crawler)
+app.include_router(network)
 
 
 # this handler return all errors and they type's
